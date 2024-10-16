@@ -1,0 +1,29 @@
+{
+	"name": "vite-react-cdn",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"preview": "vite preview",
+		"format": "biome format --write . && dprint fmt",
+		"check": "biome check --write . && dprint check",
+		"trivy:check": "trivy fs . && trivy config .",
+		"trivy:license": "trivy fs --scanners license --severity HIGH,CRITICAL .",
+		"license": "license-checker --csv | awk -F, 'BEGIN {OFS=\",\"} {temp=$2; $2=$3; $3=temp; print}' > tmp-license.csv"
+	},
+	"dependencies": {
+		"cowsay": "^1.6.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@types/react": "^18.3.11",
+		"@types/react-dom": "^18.3.1",
+		"@vitejs/plugin-react-swc": "^3.7.1",
+		"typescript": "^5.6.3",
+		"vite": "^5.4.9",
+		"vite-plugin-cdn-import": "^1.0.1"
+	}
+}

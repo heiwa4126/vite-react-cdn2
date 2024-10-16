@@ -18,15 +18,15 @@ export default defineConfig({
 			],
 		}),
 	],
-	build: {
-		minify: false, // デバッグ用
-		// rollupOptions: {
-		// 	output: {
-		// 		manualChunks: {
-		// 			r: ["react", "react-dom"],
-		// 			d: ["date-fns"],
-		// 		},
-		// 	},
-		// },
-	},
+	// build: {
+	// 	minify: false, // デバッグ用
+	// 	// rollupOptions: {
+	// 	// 	output: {
+	// 	// 		manualChunks: {
+	// 	// 			r: ["react", "react-dom"],
+	// 	// 			d: ["date-fns"],
+	// 	// 		},
+	// 	// 	},
+	// 	// },
+	// },
 });

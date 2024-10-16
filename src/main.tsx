@@ -1,7 +1,9 @@
-import { StrictMode } from "react";
+import { lazy, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
+
+// import App from "./App.tsx";
+const App = lazy(() => import("./App")); // デバッグ用にApp.tsxが別.jsにビルドされるようにする
 
 const root = document.getElementById("root");
 if (!root) {

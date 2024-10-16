@@ -14,11 +14,13 @@
 		"license": "license-checker --csv | awk -F, 'BEGIN {OFS=\",\"} {temp=$2; $2=$3; $3=temp; print}' > tmp-license.csv"
 	},
 	"dependencies": {
+		"color": "^4.2.3",
 		"date-fns": "^4.1.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
+		"@types/color": "^3.0.6",
 		"@types/react": "^18.3.11",
 		"@types/react-dom": "^18.3.1",
 		"@vitejs/plugin-react-swc": "^3.7.1",

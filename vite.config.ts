@@ -1,36 +1,32 @@
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
-// import cdn from "vite-plugin-cdn-import";
+import cdn from "vite-plugin-cdn-import";
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
 		react(),
-		// cdn({
-		// 	modules: [
-		// 		"react",
-		// 		"react-dom",
-		// 		// {
-		// 		// 	name: "cowsay",
-		// 		// 	var: "cowsay",
-		// 		// 	// path: "build/cowsay.umd.min.js",
-		// 		// 	// jsDelivrの場合はこれで終わり
-		// 		// 	// UNPKGの場合
-		// 		// 	prodUrl: "https://unpkg.com/{name}@{version}/{path}",
-		// 		// 	path: "build/cowsay.umd.js", //UNPKGにはminがないらしい
-		// 		// },
-		// 	],
-		// }),
+		cdn({
+			modules: [
+				"react",
+				"react-dom",
+				{
+					name: "date-fns",
+					var: "dateFns",
+					path: "cdn.min.js",
+				},
+			],
+		}),
 	],
 	build: {
 		minify: false, // デバッグ用
-		rollupOptions: {
-			output: {
-				manualChunks: {
-					r: ["react", "react-dom"],
-					d: ["date-fns"],
-				},
-			},
-		},
+		// rollupOptions: {
+		// 	output: {
+		// 		manualChunks: {
+		// 			r: ["react", "react-dom"],
+		// 			d: ["date-fns"],
+		// 		},
+		// 	},
+		// },
 	},
 });

@@ -14,3 +14,7 @@ Bun を使ったけど、npm, pnpm, yarn でも動くと思う。
 
 [Mottie/color-bundle: Rollup bundled version of Qix-/color](https://github.com/Mottie/color-bundle)
 があるけど、更新されてない。
+
+color-string と color-convert を読めばいいんだけど...
+
+colorjs.io はサイズがデカくて気軽には使えない。
